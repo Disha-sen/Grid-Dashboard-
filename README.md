@@ -1,7 +1,5 @@
 # FactWise Dashboard
 
-[![Vercel](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://grid-dashboard-7hkjdbxa7-disha-sens-projects.vercel.app)
-
 A robust, production-ready client-side AG Grid dashboard built with React and TypeScript. This application demonstrates enterprise-grade data grid capabilities with excellent performance, handling datasets from 20 to 100,000+ rows seamlessly.
 
 ![FactWise Dashboard](https://img.shields.io/badge/React-18.2-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue) ![AG Grid](https://img.shields.io/badge/AG_Grid-31.0-green) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-cyan)
@@ -9,7 +7,6 @@ A robust, production-ready client-side AG Grid dashboard built with React and Ty
 ## 🚀 Features
 
 ### Core Grid Functionality
-
 - ✅ **Column Sorting**: Single and multi-column sorting with visual indicators
 - ✅ **Advanced Filtering**: Text, number, and date filters with floating filter row
 - ✅ **Column Management**: Resize, reorder, hide/show columns
@@ -21,7 +18,6 @@ A robust, production-ready client-side AG Grid dashboard built with React and Ty
 - ✅ **State Persistence**: Column state (order, width, visibility) saved to localStorage
 
 ### User Experience
-
 - 🎨 **Clean UI**: Professional, minimal design with Tailwind CSS
 - 📱 **Responsive**: Mobile-friendly with horizontal scrolling on small screens
 - ♿ **Accessible**: Keyboard navigation and ARIA labels
@@ -30,7 +26,6 @@ A robust, production-ready client-side AG Grid dashboard built with React and Ty
 - ⚡ **Performance Demo**: Toggle to load 100,000 synthetic rows
 
 ### Data Formatting
-
 - 💰 Currency formatting for salary fields
 - 📅 Date formatting for hire dates
 - 📊 Numeric formatting with proper decimal places
@@ -59,13 +54,11 @@ A robust, production-ready client-side AG Grid dashboard built with React and Ty
 ## 📦 Installation
 
 1. **Extract or clone the project**:
-
    ```bash
    cd "Grid Dashboard"
    ```
 
 2. **Install dependencies**:
-
    ```bash
    npm install
    ```
@@ -126,7 +119,6 @@ npm run test:watch
 ### Test Coverage
 
 The project includes unit tests for:
-
 - ✅ DataGrid component rendering
 - ✅ Column header display
 - ✅ Quick filter functionality
@@ -184,7 +176,6 @@ The dashboard includes a performance demonstration feature:
 ### Performance Characteristics
 
 **With 100,000 rows:**
-
 - ✅ Initial render: < 2 seconds
 - ✅ Smooth scrolling with virtualization
 - ✅ Filtering response: < 500ms
@@ -193,7 +184,6 @@ The dashboard includes a performance demonstration feature:
 - ✅ Memory efficient (only visible rows in DOM)
 
 **Optimization Techniques:**
-
 - Row virtualization (AG Grid's default)
 - Pagination to limit visible rows
 - Efficient column state management
@@ -202,21 +192,20 @@ The dashboard includes a performance demonstration feature:
 
 ### Performance Metrics
 
-| Operation    | 20 Rows | 100K Rows |
-| ------------ | ------- | --------- |
-| Initial Load | Instant | < 2s      |
-| Sort Column  | Instant | < 1s      |
-| Filter       | Instant | < 500ms   |
-| Quick Search | Instant | < 300ms   |
-| Export CSV   | < 100ms | 2-3s      |
-| Scroll       | 60 FPS  | 60 FPS    |
+| Operation | 20 Rows | 100K Rows |
+|-----------|---------|-----------|
+| Initial Load | Instant | < 2s |
+| Sort Column | Instant | < 1s |
+| Filter | Instant | < 500ms |
+| Quick Search | Instant | < 300ms |
+| Export CSV | < 100ms | 2-3s |
+| Scroll | 60 FPS | 60 FPS |
 
 ## ⚙️ Configuration
 
 ### Customizing Column Definitions
 
 Edit `src/config/columnDefs.ts` to modify:
-
 - Column names and fields
 - Filter types
 - Formatters
@@ -340,7 +329,6 @@ The built application is a static site that can be deployed to:
 ### AG Grid Community vs Enterprise
 
 This project uses **AG Grid Community** (free, open-source). For additional features like:
-
 - Column grouping and aggregation
 - Advanced filtering
 - Master/detail views
@@ -352,7 +340,6 @@ Consider upgrading to **AG Grid Enterprise** (requires license).
 ### Browser Compatibility
 
 Tested and works on:
-
 - ✅ Chrome 90+
 - ✅ Firefox 88+
 - ✅ Safari 14+
@@ -366,7 +353,6 @@ Tested and works on:
 ## 📧 Support
 
 For issues or questions:
-
 1. Check the console for error messages
 2. Verify all dependencies are installed: `npm install`
 3. Clear browser cache and localStorage
@@ -380,4 +366,4 @@ This project is provided as-is for evaluation purposes.
 
 **Built with ❤️ for FactWise**
 
-_Last updated: November 29, 2025_
+*Last updated: November 29, 2025*

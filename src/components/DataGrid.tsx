@@ -11,29 +11,9 @@ import Toolbar from './Toolbar';
 interface DataGridProps {
   data: Employee[];
   onDataSourceChange?: (useSynthetic: boolean) => void;
-  isLoading?: boolean;
 }
 
-const GridSkeleton = () => (
-  <div className="w-full h-[650px] bg-white/10 rounded-xl overflow-hidden animate-pulse border border-white/10">
-    {/* Header Skeleton */}
-    <div className="h-12 border-b border-white/10 bg-white/10 flex items-center px-4 gap-4">
-      {[1, 2, 3, 4, 5, 6].map((i) => (
-        <div key={i} className="h-4 bg-white/20 rounded w-32" />
-      ))}
-    </div>
-    {/* Rows Skeleton */}
-    {[...Array(15)].map((_, i) => (
-      <div key={i} className="h-12 border-b border-white/5 flex items-center px-4 gap-4">
-        {[1, 2, 3, 4, 5, 6].map((j) => (
-          <div key={j} className="h-3 bg-white/10 rounded w-32" />
-        ))}
-      </div>
-    ))}
-  </div>
-);
-
-const DataGrid: React.FC<DataGridProps> = ({ data, onDataSourceChange, isLoading = false }) => {
+const DataGrid: React.FC<DataGridProps> = ({ data, onDataSourceChange }) => {
   const gridRef = useRef<AgGridReact<Employee>>(null);
   const [gridApi, setGridApi] = useState<GridApi | null>(null);
   const [columnApi, setColumnApi] = useState<ColumnApi | null>(null);
@@ -180,7 +160,7 @@ const DataGrid: React.FC<DataGridProps> = ({ data, onDataSourceChange, isLoading
   }, [gridApi, paginationPageSize]);
 
   return (
-    <div className="flex flex-col bg-white/5 rounded-2xl shadow-glass overflow-visible border border-white/10">
+    <div className="flex flex-col bg-white rounded-2xl shadow-glass overflow-visible">
       <Toolbar
         onQuickFilterChange={onQuickFilterChanged}
         onExportCSV={handleExportCSV}
@@ -194,32 +174,28 @@ const DataGrid: React.FC<DataGridProps> = ({ data, onDataSourceChange, isLoading
       />
 
       <div className="ag-theme-quartz" style={{ width: '100%', height: '650px' }}>
-        {isLoading ? (
-          <GridSkeleton />
-        ) : (
-          <AgGridReact<Employee>
-            ref={gridRef}
-            rowData={data}
-            columnDefs={columnDefs}
-            defaultColDef={defaultColDef}
-            onGridReady={onGridReady}
-            onColumnMoved={onColumnMoved}
-            onColumnResized={onColumnResized}
-            onColumnVisible={onColumnVisible}
-            onSortChanged={onSortChanged}
-            onSelectionChanged={onSelectionChanged}
-            pagination={true}
-            paginationPageSize={paginationPageSize}
-            rowSelection="multiple"
-            suppressRowClickSelection={true}
-            animateRows={true}
-            enableCellTextSelection={true}
-            suppressScrollOnNewData={true}
-            maintainColumnOrder={true}
-            overlayNoRowsTemplate='<span class="ag-overlay-no-rows-center">No employees found</span>'
-            overlayLoadingTemplate='<span class="ag-overlay-loading-center">Loading employees...</span>'
-          />
-        )}
+        <AgGridReact<Employee>
+          ref={gridRef}
+          rowData={data}
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          onGridReady={onGridReady}
+          onColumnMoved={onColumnMoved}
+          onColumnResized={onColumnResized}
+          onColumnVisible={onColumnVisible}
+          onSortChanged={onSortChanged}
+          onSelectionChanged={onSelectionChanged}
+          pagination={true}
+          paginationPageSize={paginationPageSize}
+          rowSelection="multiple"
+          suppressRowClickSelection={true}
+          animateRows={true}
+          enableCellTextSelection={true}
+          suppressScrollOnNewData={true}
+          maintainColumnOrder={true}
+          overlayNoRowsTemplate='<span class="ag-overlay-no-rows-center">No employees found</span>'
+          overlayLoadingTemplate='<span class="ag-overlay-loading-center">Loading employees...</span>'
+        />
       </div>
     </div>
   );
